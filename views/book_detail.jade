@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Title: #{book.title}
+
+  p #[strong Author: ]
+    a(href=book.author.url) #{book.author.name}
+  p #[strong Summary:] #{book.summary}
+  // Les champs ISBN et genre ont été commentés car ils ont été retirés dans l'exemple précédent, mais je les laisse ici pour référence future.
+  // p #[strong ISBN:] #{book.isbn}
+  // p #[strong Genre: ]
+  //   each val, index in book.genre
+  //     a(href=val.url) #{val.name}
+  //     if index < book.genre.length - 1
+  //       |,&nbsp;
+
+  hr
+  p
+    a(href=book.url + '/delete') Delete Book
+  p
+    a(href=book.url + '/update') Update Book
